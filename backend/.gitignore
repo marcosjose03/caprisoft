@@ -1,0 +1,48 @@
+# =======================
+# Backend Spring Boot
+# =======================
+/target/
+/.mvn/wrapper/maven-wrapper.jar
+
+# Logs
+*.log
+
+# Configuración de IDEs
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### VS Code ###
+.vscode/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# Archivos generados por Eclipse/STS
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+# =======================
+# Frontend React
+# =======================
+/node_modules/
+build/
+
+# =======================
+# Secretos / variables
+# =======================
+.env
