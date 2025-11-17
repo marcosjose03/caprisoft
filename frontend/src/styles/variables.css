@@ -1,0 +1,22 @@
+:root {
+    /* Colores principales */
+    --color-primary: #0d9488;
+    /* teal-600 */
+    --color-primary-dark: #0f766e;
+    /* teal-700 */
+    --color-primary-light: #14b8a6;
+    /* teal-500 */
+
+    /* Colores de fondo */
+    --bg-gradient-start: #f0fdfa;
+    /* teal-50 */
+    --bg-gradient-end: #cffafe;
+    /* cyan-100 */
+
+    /* Sombras */
+    --shadow-card: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+
+    /* Bordes */
+    --border-radius-card: 1rem;
+    --border-radius-button: 0.5rem;
+}

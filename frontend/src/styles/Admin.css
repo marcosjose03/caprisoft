@@ -1,0 +1,262 @@
+/* ============================================
+   ADMIN - CONTENEDOR PRINCIPAL
+   ============================================ */
+.admin-container {
+    min-height: 100vh;
+    background: linear-gradient(to bottom right, #f0fdfa, #cffafe);
+    padding: 2rem;
+}
+
+.admin-header {
+    max-width: 1400px;
+    margin: 0 auto 2rem;
+}
+
+.admin-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+}
+
+.admin-subtitle {
+    font-size: 1.125rem;
+    color: #6b7280;
+}
+
+/* ============================================
+   SECCIONES
+   ============================================ */
+.stats-section {
+    max-width: 1400px;
+    margin: 0 auto 3rem;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 1.5rem;
+}
+
+/* ============================================
+   GRID DE ESTADÍSTICAS
+   ============================================ */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+/* ============================================
+   TARJETAS DE ESTADÍSTICAS
+   ============================================ */
+.stat-card {
+    background: white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    display: flex;
+    gap: 1rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.stat-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.stat-content {
+    flex: 1;
+}
+
+.stat-title {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #1f2937;
+    margin-bottom: 0.25rem;
+}
+
+.stat-subtitle {
+    font-size: 0.75rem;
+    color: #9ca3af;
+}
+
+/* Colores de las tarjetas */
+.stat-card-blue .stat-icon {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.stat-card-green .stat-icon {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.stat-card-red .stat-icon {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.stat-card-yellow .stat-icon {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.stat-card-purple .stat-icon {
+    background: #ede9fe;
+    color: #5b21b6;
+}
+
+/* ============================================
+   TARJETAS DE INGRESOS
+   ============================================ */
+.revenue-grid {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+.revenue-card {
+    background: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.revenue-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.revenue-card.total {
+    background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
+    color: white;
+}
+
+.revenue-card.monthly {
+    background: linear-gradient(135deg, #14b8a6 0%, #0d9488 100%);
+    color: white;
+}
+
+.revenue-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.revenue-label {
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+
+.revenue-amount {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.revenue-subtitle {
+    font-size: 0.875rem;
+    opacity: 0.9;
+}
+
+/* ============================================
+   LOADING Y ERROR
+   ============================================ */
+.loading-container,
+.error-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60vh;
+    text-align: center;
+}
+
+.spinner {
+    animation: spin 1s linear infinite;
+    color: #0d9488;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loading-container p,
+.error-container p {
+    margin-top: 1rem;
+    font-size: 1.125rem;
+    color: #6b7280;
+}
+
+.btn-retry {
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #0d9488;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-retry:hover {
+    background-color: #0f766e;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+    .admin-container {
+        padding: 1rem;
+    }
+
+    .admin-title {
+        font-size: 2rem;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .revenue-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-value {
+        font-size: 1.5rem;
+    }
+
+    .revenue-amount {
+        font-size: 2rem;
+    }
+}

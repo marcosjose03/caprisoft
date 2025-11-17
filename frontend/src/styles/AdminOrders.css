@@ -1,0 +1,282 @@
+/* ============================================
+   ADMIN ORDERS - CONTENEDOR
+   ============================================ */
+.admin-orders-container {
+    min-height: 100vh;
+    background: linear-gradient(to bottom right, #f0fdfa, #cffafe);
+    padding: 2rem;
+}
+
+.admin-orders-header {
+    max-width: 1400px;
+    margin: 0 auto 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-refresh {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #0d9488;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-refresh:hover {
+    background-color: #0f766e;
+}
+
+/* ============================================
+   FILTROS
+   ============================================ */
+.orders-filters {
+    max-width: 1400px;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    gap: 1rem;
+    background: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* ============================================
+   ESTADÍSTICAS RÁPIDAS
+   ============================================ */
+.quick-stats {
+    max-width: 1400px;
+    margin: 0 auto 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.quick-stat {
+    background: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    border-left: 4px solid #3b82f6;
+}
+
+.quick-stat.stat-pending {
+    border-left-color: #eab308;
+}
+
+.quick-stat.stat-confirmed {
+    border-left-color: #3b82f6;
+}
+
+.quick-stat.stat-delivered {
+    border-left-color: #10b981;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-bottom: 0.5rem;
+}
+
+.stat-number {
+    display: block;
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: #1f2937;
+}
+
+/* ============================================
+   TABLA
+   ============================================ */
+.orders-table-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.orders-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.orders-table thead {
+    background: #f9fafb;
+}
+
+.orders-table th {
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    color: #1f2937;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+    border-bottom: 2px solid #e5e7eb;
+}
+
+.orders-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.orders-table tbody tr:hover {
+    background: #f9fafb;
+}
+
+/* Celdas específicas */
+.order-number-cell {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    color: #0d9488;
+}
+
+.customer-cell {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.customer-name {
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 0.125rem;
+}
+
+.customer-phone {
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+.date-cell {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+.total-cell {
+    font-weight: 600;
+    color: #0d9488;
+    font-size: 1.125rem;
+}
+
+/* ============================================
+   SELECT DE ESTADO
+   ============================================ */
+.status-select {
+    padding: 0.5rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.status-select:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.status-select.status-pending {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.status-select.status-confirmed {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.status-select.status-preparing {
+    background: #e0e7ff;
+    color: #4338ca;
+}
+
+.status-select.status-shipped {
+    background: #ccfbf1;
+    color: #0f766e;
+}
+
+.status-select.status-delivered {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.status-select.status-cancelled {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+/* ============================================
+   BOTÓN DE VISTA
+   ============================================ */
+.btn-view {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.btn-view:hover {
+    background: #bfdbfe;
+}
+
+/* ============================================
+   MODAL
+   ============================================ */
+.detail-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 1024px) {
+    .orders-table-container {
+        overflow-x: auto;
+    }
+
+    .orders-table {
+        min-width: 900px;
+    }
+}
+
+@media (max-width: 768px) {
+    .admin-orders-header {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: stretch;
+    }
+
+    .orders-filters {
+        flex-direction: column;
+    }
+
+    .quick-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .detail-grid {
+        grid-template-columns: 1fr;
+    }
+}

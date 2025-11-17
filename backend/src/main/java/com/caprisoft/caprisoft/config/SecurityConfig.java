@@ -5,6 +5,7 @@ import com.caprisoft.caprisoft.security.services.UserDetailsServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
@@ -18,6 +19,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.cors.CorsConfiguration;
+
+import java.util.Arrays;
 
 @Configuration
 @EnableWebSecurity
@@ -49,36 +53,50 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-            // Deshabilitar CSRF para una API stateless
-            .csrf(AbstractHttpConfigurer::disable)
-            
-            // Deshabilitar CORS temporalmente para debugging
-            .cors(AbstractHttpConfigurer::disable)
+                .csrf(AbstractHttpConfigurer::disable)
 
-            // Deshabilitar los mecanismos de login por defecto que no usamos
-            .formLogin(AbstractHttpConfigurer::disable)
-            .httpBasic(AbstractHttpConfigurer::disable)
+                // Configurar CORS
+                .cors(cors -> cors.configurationSource(request -> {
+                    CorsConfiguration config = new CorsConfiguration();
+                    config.setAllowedOrigins(Arrays.asList("http://localhost:3000"));
+                    config.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
+                    config.setAllowedHeaders(Arrays.asList("*"));
+                    config.setAllowCredentials(true);
+                    return config;
+                }))
 
-            // Configurar la política de sesión como STATELESS
-            .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .formLogin(AbstractHttpConfigurer::disable)
+                .httpBasic(AbstractHttpConfigurer::disable)
 
-            // CRÍTICO: Definir las reglas de autorización de peticiones
-            .authorizeHttpRequests(auth -> auth
-                // Permitir todos los endpoints de autenticación
-                .requestMatchers("/api/auth/**").permitAll()
-                .requestMatchers("/api/auth/login").permitAll()
-                .requestMatchers("/api/auth/register").permitAll()
-                .requestMatchers("/api/auth/ping").permitAll()
-                // Todas las demás rutas requieren autenticación
-                .anyRequest().authenticated()
-            )
+                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 
-            // Registrar nuestro proveedor de autenticación personalizado
-            .authenticationProvider(authenticationProvider())
+                .authorizeHttpRequests(auth -> auth
+                        .requestMatchers("/api/auth/**").permitAll()
+                        .requestMatchers("/api/auth/login").permitAll()
+                        .requestMatchers("/api/auth/register").permitAll()
+                        .requestMatchers("/api/auth/ping").permitAll()
+                        .requestMatchers("/api/auth/forgot-password").permitAll() 
+                        .requestMatchers("/api/auth/reset-password").permitAll() 
+                        .requestMatchers("/api/auth/validate-reset-token").permitAll() 
+                        // Endpoints de autenticación (públicos)
+                        .requestMatchers("/api/auth/**").permitAll()
 
-            // IMPORTANTE: Añadir nuestro filtro JWT antes del filtro de usuario/contraseña
-            // Pero el filtro ya tiene lógica para saltar endpoints públicos
-            .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
+                        // Endpoints de productos (públicos - solo lectura)
+                        .requestMatchers(HttpMethod.GET, "/api/products/**").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/api/products/categories").permitAll()
+
+                        // Endpoints de productos (solo ADMIN puede crear/modificar/eliminar)
+                        .requestMatchers(HttpMethod.POST, "/api/products/**").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.PUT, "/api/products/**").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.DELETE, "/api/products/**").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.PATCH, "/api/products/**").hasRole("ADMIN")
+                        .requestMatchers("/api/orders/**").authenticated()
+                        .requestMatchers("/api/dashboard/**").hasRole("ADMIN")
+
+                        .anyRequest().authenticated())
+
+                .authenticationProvider(authenticationProvider())
+                .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
     }
