@@ -1,0 +1,109 @@
+/* ============================
+   ESTILOS GENERALES
+=============================== */
+
+.reports-page {
+    padding: 30px;
+    font-family: "Poppins", sans-serif;
+    color: #333;
+}
+
+.title {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+/* ============================
+   FILTROS
+=============================== */
+
+.filters {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 14px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.08);
+    margin-bottom: 30px;
+}
+
+.filters label {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    color: #555;
+}
+
+.filters input[type="date"] {
+    padding: 10px 14px;
+    margin-top: 5px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background: #f9f9f9;
+    font-size: 15px;
+    transition: border 0.2s;
+}
+
+.filters input[type="date"]:focus {
+    border: 1px solid #4a90e2;
+    outline: none;
+}
+
+/* Botón */
+.btn-generate {
+    padding: 12px 20px;
+    background: #4a90e2;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    transition: 0.2s;
+    margin-top: 15px;
+}
+
+.btn-generate:hover {
+    background: #417ec4;
+    transform: translateY(-2px);
+}
+
+/* ============================
+   TARJETA DE RESULTADOS
+=============================== */
+
+.report-card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0px 4px 14px rgba(0,0,0,0.08);
+    max-width: 450px;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.report-card h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.report-card p {
+    font-size: 17px;
+    margin: 10px 0;
+    color: #444;
+}
+
+/* Animación suave */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

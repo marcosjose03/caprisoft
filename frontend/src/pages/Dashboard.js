@@ -10,6 +10,8 @@ import MyOrdersPage from './MyOrdersPage';
 import AdminDashboardPage from './AdminDashboardPage';
 import AdminProductsPage from './AdminProductsPage';
 import AdminOrdersPage from './AdminOrdersPage';
+import AdminReportsPage from './AdminReportsPage';
+
 
 const Dashboard = () => {
     const { user, logout } = useAuth();
@@ -37,7 +39,8 @@ const Dashboard = () => {
             case 'orders-admin':
                 return <AdminOrdersPage />;
             case 'reports':
-                return <div className="coming-soon">Reportes - Próximamente</div>;
+                return <AdminReportsPage />;
+
             default:
                 return <CatalogPage />;
         }
