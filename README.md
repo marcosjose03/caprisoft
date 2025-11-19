@@ -1,9 +1,3 @@
-Aquí tienes el **README** EXACTAMENTE con el mismo formato del ejemplo, pero adaptado completamente a tu proyecto **Caprisoft**.
-Incluye el título centrado, créditos en línea, overview, instalación y ejecución del backend y frontend y las tecnologías utilizadas.
-
----
-
-````md
 <p align="center">
   <h1 align="center">Caprisoft – Sistema de Gestión de Pedidos Caprinos</h1>
   <p align="center">
