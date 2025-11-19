@@ -2,7 +2,7 @@
   <h1 align="center">Caprisoft – Sistema de Gestión de Pedidos Caprinos</h1>
   <p align="center">
   <p align="center">
-    <a href="https://github.com/TU_USUARIO" rel="external nofollow noopener" target="_blank"><strong>Brayan Sneider Sánchez</strong></a>
+    <a href="https://github.com/Sneider-exe" rel="external nofollow noopener" target="_blank"><strong>Brayan Sneider Sánchez</strong></a>
     ·
     <a href="https://github.com/marcosjose03" rel="external nofollow noopener" target="_blank"><strong>Marcos Jose Orjuela</strong></a>
     ·
