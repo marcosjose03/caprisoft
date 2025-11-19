@@ -28,8 +28,14 @@ public class JwtFilter extends OncePerRequestFilter {
     private static final List<String> EXCLUDED_PATHS = Arrays.asList(
             "/api/auth/login",
             "/api/auth/register", 
-            "/api/auth/ping"
+            "/api/auth/ping",
+
+            // NECESARIO PARA EL FRONTEND ADMIN
+            "/api/orders/statuses",
+            "/api/orders/payment-methods"
     );
+
+    
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, 
@@ -42,6 +48,8 @@ public class JwtFilter extends OncePerRequestFilter {
             System.out.println("🟢 SALTANDO JWT FILTER para: " + requestPath);
             filterChain.doFilter(request, response);
             return;
+
+            
         }
 
         System.out.println("🔍 APLICANDO JWT FILTER para: " + requestPath);

@@ -106,7 +106,7 @@ const CheckoutPage = () => {
                         Recibirás una confirmación y podrás seguir tu pedido en la sección "Mis Pedidos"
                     </p>
                     <button
-                        onClick={() => window.location.href = '#/orders'}
+                        onClick={() => window.location.href = '/orders'}
                         className="btn-view-orders"
                     >
                         Ver mis pedidos

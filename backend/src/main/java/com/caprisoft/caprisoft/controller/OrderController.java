@@ -128,18 +128,19 @@ public class OrderController {
     @PatchMapping("/{id}/status")
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<?> updateOrderStatus(
-            @PathVariable Long id,
-            @RequestParam OrderStatus status) {
-        try {
-            OrderDTO order = orderService.updateOrderStatus(id, status);
-            return ResponseEntity.ok(order);
-        } catch (OrderNotFoundException e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                    .body(Map.of("error", e.getMessage()));
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body(Map.of("error", "Error al actualizar el estado"));
-        }
+        @PathVariable Long id,
+        @RequestParam OrderStatus status) {
+    try {
+        OrderDTO order = orderService.updateOrderStatus(id, status);
+        return ResponseEntity.ok(order);
+    } catch (OrderNotFoundException e) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                .body(Map.of("error", e.getMessage()));
+    } catch (Exception e) {
+        e.printStackTrace(); // ← ESTO MUESTRA EL ERROR REAL
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                .body(Map.of("error", e.getMessage())); // ← ESTO LO ENVÍA AL FRONTEND
+    }
     }
 
     // ========== ESTADÍSTICAS (Solo ADMIN) ==========

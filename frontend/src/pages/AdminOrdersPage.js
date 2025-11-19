@@ -105,8 +105,6 @@ const AdminOrdersPage = () => {
         const colors = {
             PENDIENTE: 'status-pending',
             CONFIRMADO: 'status-confirmed',
-            EN_PREPARACION: 'status-preparing',
-            ENVIADO: 'status-shipped',
             ENTREGADO: 'status-delivered',
             CANCELADO: 'status-cancelled',
         };
