@@ -1,0 +1,29 @@
+{
+  "products": [
+    { "id": 201, "name": "Cemento Gris 50kg", "price": 35000, "unit": "Saco", "stock": 120 },
+    { "id": 202, "name": "Cemento Blanco 25kg", "price": 28000, "unit": "Saco", "stock": 80 },
+    { "id": 203, "name": "Arena Fina", "price": 12000, "unit": "m³", "stock": 50 },
+    { "id": 204, "name": "Arena Gruesa", "price": 10000, "unit": "m³", "stock": 75 },
+    { "id": 205, "name": "Grava 3/4", "price": 22000, "unit": "m³", "stock": 40 },
+    { "id": 206, "name": "Bloque de Hormigón", "price": 1500, "unit": "Unidad", "stock": 600 },
+    { "id": 207, "name": "Ladrillo Macizo", "price": 800, "unit": "Unidad", "stock": 900 },
+    { "id": 208, "name": "Ladrillo Hueco", "price": 700, "unit": "Unidad", "stock": 1100 },
+    { "id": 209, "name": "Varilla de Acero 3/8", "price": 14000, "unit": "Unidad", "stock": 200 },
+    { "id": 210, "name": "Varilla de Acero 1/2", "price": 20000, "unit": "Unidad", "stock": 150 },
+    { "id": 211, "name": "Tubos PVC 1/2\"", "price": 3500, "unit": "Unidad", "stock": 300 },
+    { "id": 212, "name": "Tubos PVC 1\"", "price": 5200, "unit": "Unidad", "stock": 250 },
+    { "id": 213, "name": "Pintura Blanca 1 galón", "price": 45000, "unit": "Galón", "stock": 90 },
+    { "id": 214, "name": "Pintura Exterior Roja", "price": 52000, "unit": "Galón", "stock": 70 },
+    { "id": 215, "name": "Pintura Anticorrosiva Negra", "price": 60000, "unit": "Galón", "stock": 55 },
+    { "id": 216, "name": "Yeso 20kg", "price": 18000, "unit": "Saco", "stock": 130 },
+    { "id": 217, "name": "Teja de Zinc 3m", "price": 32000, "unit": "Unidad", "stock": 40 },
+    { "id": 218, "name": "Teja de Zinc 4m", "price": 42000, "unit": "Unidad", "stock": 35 },
+    { "id": 219, "name": "Clavos 2\"", "price": 12000, "unit": "Caja 1000 uds", "stock": 60 },
+    { "id": 220, "name": "Clavos 3\"", "price": 15000, "unit": "Caja 1000 uds", "stock": 50 },
+    { "id": 221, "name": "Martillo Carpintero", "price": 25000, "unit": "Unidad", "stock": 90 },
+    { "id": 222, "name": "Alicate Universal", "price": 18000, "unit": "Unidad", "stock": 85 },
+    { "id": 223, "name": "Taladro Percutor 600W", "price": 230000, "unit": "Unidad", "stock": 20 },
+    { "id": 224, "name": "Sierra Circular 1200W", "price": 350000, "unit": "Unidad", "stock": 15 },
+    { "id": 225, "name": "Cinta Métrica 5m", "price": 6000, "unit": "Unidad", "stock": 200 }
+  ]
+}

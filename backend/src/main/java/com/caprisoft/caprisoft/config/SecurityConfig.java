@@ -96,6 +96,7 @@ public class SecurityConfig {
                         .requestMatchers("/api/orders/**").authenticated()
                         .requestMatchers("/api/dashboard/**").hasRole("ADMIN")
 
+                        .requestMatchers("/api/integration/**").permitAll()
                         .anyRequest().authenticated())
 
                 .authenticationProvider(authenticationProvider())

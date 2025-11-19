@@ -11,6 +11,12 @@ import AdminDashboardPage from './AdminDashboardPage';
 import AdminProductsPage from './AdminProductsPage';
 import AdminOrdersPage from './AdminOrdersPage';
 import AdminReportsPage from './AdminReportsPage';
+import ExternalProductsReport from './ExternalProductsReport';
+import IntegrationReportPage from './IntegrationReportPage';
+import {
+  LayoutDashboard,
+  GitCompare
+} from "lucide-react";
 
 
 const Dashboard = () => {
@@ -40,7 +46,8 @@ const Dashboard = () => {
                 return <AdminOrdersPage />;
             case 'reports':
                 return <AdminReportsPage />;
-
+            case 'integration-report':
+                return <IntegrationReportPage />;
             default:
                 return <CatalogPage />;
         }
@@ -118,7 +125,7 @@ const Dashboard = () => {
                                     onClick={() => setActiveView('admin-dashboard')}
                                     className={`menu-item ${activeView === 'admin-dashboard' ? 'active' : ''}`}
                                 >
-                                    <BarChart3 size={20} />
+                                    <LayoutDashboard size={20} />
                                     <span>Dashboard</span>
                                 </button>
 
@@ -144,6 +151,14 @@ const Dashboard = () => {
                                 >
                                     <BarChart3 size={20} />
                                     <span>Reportes</span>
+                                </button>
+
+                                <button
+                                    onClick={() => setActiveView('integration-report')}
+                                    className={`menu-item ${activeView === 'integration-report' ? 'active' : ''}`}
+                                >
+                                    <GitCompare size={20} />
+                                    <span>Integración</span>
                                 </button>
                             </>
                         )}

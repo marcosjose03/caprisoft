@@ -139,56 +139,56 @@ const CatalogPage = () => {
             </div>
 
             {/* Filtros */}
-            <div className="catalog-filters">
+        <div className="catalog-filters">
 
-                {/* Búsqueda */}
-                <div className="filter-search">
-                    <Search size={20} className="search-icon" />
-                    <input
-                        type="text"
-                        placeholder="Buscar productos..."
-                        value={searchTerm}
-                        onChange={(e) => setSearchTerm(e.target.value)}
-                        className="search-input"
-                    />
-                </div>
-
-                {/* Categoría */}
-                <div className="filter-group">
-                    <Filter size={20} />
-                    <select
-                        value={selectedCategory}
-                        onChange={(e) => setSelectedCategory(e.target.value)}
-                        className="filter-select"
-                    >
-                        <option value="ALL">Todas las categorías</option>
-                        {Object.entries(categories).map(([key, value]) => (
-                            <option key={key} value={key}>
-                                {value}
-                            </option>
-                        ))}
-                    </select>
-                </div>
-
-                {/* Estado */}
-                <div className="filter-group">
-                    <select
-                        value={selectedStatus}
-                        onChange={(e) => setSelectedStatus(e.target.value)}
-                        className="filter-select"
-                    >
-                        <option value="ALL">Todos los estados</option>
-                        <option value="DISPONIBLE">Disponible</option>
-                        <option value="AGOTADO">Agotado</option>
-                    </select>
-                </div>
-
-                {(searchTerm || selectedCategory !== 'ALL' || selectedStatus !== 'ALL') && (
-                    <button onClick={clearFilters} className="btn-clear-filters">
-                        Limpiar filtros
-                    </button>
-                )}
+            {/* Buscar */}
+            <div className="filter-box">
+                <Search size={18} className="filter-icon-left" />
+                <input
+                    type="text"
+                    placeholder="Buscar productos..."
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                />
             </div>
+
+            {/* Categorías */}
+            <div className="filter-box">
+                <Filter size={18} className="filter-icon-left" />
+                <select
+                    value={selectedCategory}
+                    onChange={(e) => setSelectedCategory(e.target.value)}
+                >
+                    <option value="ALL">Todas las categorías</option>
+                    {Object.entries(categories).map(([key, value]) => (
+                        <option key={key} value={key}>
+                            {value}
+                        </option>
+                    ))}
+                </select>
+            </div>
+
+            {/* Estado */}
+            <div className="filter-box">
+                <Filter size={18} className="filter-icon-left" />
+                <select
+                    value={selectedStatus}
+                    onChange={(e) => setSelectedStatus(e.target.value)}
+                >
+                    <option value="ALL">Todos los estados</option>
+                    <option value="DISPONIBLE">Disponible</option>
+                    <option value="AGOTADO">Agotado</option>
+                </select>
+            </div>
+
+            {/* Botón limpiar */}
+            {(searchTerm || selectedCategory !== "ALL" || selectedStatus !== "ALL") && (
+                <button onClick={clearFilters} className="btn-clear-filters">
+                    Limpiar filtros
+                </button>
+            )}
+        </div>
+
 
             {/* Resultados */}
             <div className="catalog-results">

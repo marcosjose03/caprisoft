@@ -32,7 +32,8 @@ public class JwtFilter extends OncePerRequestFilter {
 
             // NECESARIO PARA EL FRONTEND ADMIN
             "/api/orders/statuses",
-            "/api/orders/payment-methods"
+            "/api/orders/payment-methods",
+            "/api/integration"
     );
 
     
