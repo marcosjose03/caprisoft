@@ -36,8 +36,7 @@ Caprisoft está construido con **Spring Boot + Java** en el backend, **React.js*
 - React.js  
 - JavaScript ES6  
 - Context API (Auth / Cart)  
-- CSS personalizado  
-- Lucide React Icons  
+- CSS
 
 ### **Backend**
 - Java 17  
@@ -147,6 +146,6 @@ http://localhost:5000/products
 
 ## Licencia
 
-Este proyecto es de uso académico para el curso de Ingeniería de Software – UIS 2025-2.
+Este proyecto es de uso académico para el curso de Ingeniería de Software II– UIS 2025-2.
 Puedes modificarlo y adaptarlo libremente.
 
